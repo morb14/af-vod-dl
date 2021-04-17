@@ -14,9 +14,9 @@ namespace Program
             Console.WriteLine("                    https://groyper.me");
             Console.WriteLine("Date of VOD YYYY-MM-DD");
             date = Console.ReadLine();
-            Console.Write("ok i download " + date + " VOD now :D");
             if(isWindows)
             {
+                Console.WriteLine("ok i download " + date + " VOD now :D\n");
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
 			    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
 			    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
