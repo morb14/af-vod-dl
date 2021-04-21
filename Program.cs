@@ -10,25 +10,26 @@ namespace Program
         {
             string date = "";
             var isWindows=System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+            Console.Title = "America First VOD Downloader";
             Console.WriteLine("                    https://t.me/zoomermorb");
             Console.WriteLine("                    https://groyper.me");
             Console.WriteLine("Date of VOD YYYY-MM-DD");
             date = Console.ReadLine();
             if(isWindows)
             {
-                Console.WriteLine("ok i download " + date + " VOD now :D");
+                Console.WriteLine("ok i download " + date + " VOD now :D\n\n");
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
 			    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
 			    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
 			    startInfo.FileName = "yt-dlp.exe";
-			    startInfo.Arguments = "-i --prefer-ffmpeg --merge-output-format mp4 --add-metadata --write-thumbnail --verbose --force-ipv4 --ignore-errors --no-continue --no-overwrites -o " + date + ".mp4 --no-check-certificate --force-generic-extractor https://cdn2.foxtrotstream.xyz/vod_local/af/" + date + "/index.m3u8";
+			    startInfo.Arguments = "-i --prefer-ffmpeg --merge-output-format mp4 --verbose --force-ipv4 --ignore-errors --no-continue --no-overwrites -o " + date + ".mp4 --no-check-certificate --force-generic-extractor https://cdn2.foxtrotstream.xyz/vod_local/af/" + date + "/index.m3u8";
 			    process.StartInfo = startInfo;
 			    process.Start();
             }
             else
             {
                 Console.WriteLine("copy and paste this line into your terminal vvv (must have yt-dlp and ffmpeg installed)");
-                Console.WriteLine("yt-dlp -i --prefer-ffmpeg --merge-output-format mp4 --add-metadata --write-thumbnail --verbose --force-ipv4 --ignore-errors --no-continue --no-overwrites -o " + date + ".mp4 --no-check-certificate --force-generic-extractor https://cdn2.foxtrotstream.xyz/vod_local/af/" + date + "/index.m3u8");
+                Console.WriteLine("yt-dlp -i --prefer-ffmpeg --merge-output-format mp4 --verbose --force-ipv4 --ignore-errors --no-continue --no-overwrites -o " + date + ".mp4 --no-check-certificate --force-generic-extractor https://cdn2.foxtrotstream.xyz/vod_local/af/" + date + "/index.m3u8");
             }
 			Console.ReadLine();
 			Environment.Exit(0);
